@@ -58,6 +58,7 @@ class DBStorage:
         """
         if obj:
             self.__session.delete(obj)
+            self.save()
 
     def reload(self):
         """configuration
@@ -72,4 +73,4 @@ class DBStorage:
     def close(self):
         """ calls remove()
         """
-        self.__session.close()
+        self.__session.remove()
