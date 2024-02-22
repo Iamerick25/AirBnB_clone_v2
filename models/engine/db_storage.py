@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ new class for sqlAlchemy """
 import os
+from os import getenv
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import (create_engine)
 from sqlalchemy.ext.declarative import declarative_base
@@ -18,7 +19,6 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-<<<<<<< HEAD
         user = getenv("HBNB_MYSQL_USER")
         passwd = getenv("HBNB_MYSQL_PWD")
         db = getenv("HBNB_MYSQL_DB")
@@ -29,21 +29,7 @@ class DBStorage:
                                       .format(user, passwd, host, db),
                                       pool_pre_ping=True)
 
-        if env == "test":
-=======
-        """
-        create engine
-        """
-
-        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
-                                      .format(
-                                          os.getenv('HBNB_MYSQL_USER'),
-                                          os.getenv('HBNB_MYSQL_PWD'),
-                                          os.getenv('HBNB_MYSQL_HOST'),
-                                          os.getenv('HBNB_MYSQL_DB')),
-                                          pool_pre_ping=True)
         if (os.getenv('HBNB_ENV') == 'test'):
->>>>>>> 9dcef72d74c0f8d6b7e183b3e98da779363bef24
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
