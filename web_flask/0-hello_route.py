@@ -1,21 +1,5 @@
 #!/usr/bin/python3
 """
-<<<<<<< HEAD
-    Sript that starts a Flask web application
- """
-from flask import Flask
-app = Flask(__name__)
-
-
-@app.route('/', strict_slashes=False)
-def hello_hbn():
-    """
-        function to return Hello HBNB!
-    """
-    return "Hello HBNB!"
-if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=5000)
-=======
 script that starts a Flask web application
 web application listening on 0.0.0.0 and port 5000
 used strict_slashes=False in route definition
@@ -39,4 +23,3 @@ def hello_hbnb():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
->>>>>>> f36534d4a39c1f0dec90ab7d46d53d3726ca7954
